@@ -47,6 +47,7 @@ function start_experiment() {
         this is an example which enables each set
         includes different number of methods.
     */
+    /*
     if (set_num == "1") {
         method_paths.push(wav_dir + "set" + set_num + "/natural.list");
     } else if (set_num == "2") {
@@ -55,6 +56,12 @@ function start_experiment() {
     } else if (set_num == "3") {
         method_paths.push(wav_dir + "set" + set_num + "/qppwg.list");
         method_paths.push(wav_dir + "set" + set_num + "/usfgan.list");
+    }
+    */
+    if (set_num == "1") {
+        method_paths.push(wav_dir + "set" + set_num + "/method1.list");
+    } else if (set_num == "2") {
+        method_paths.push(wav_dir + "set" + set_num + "/method2.list");
     }
     /*
         end
