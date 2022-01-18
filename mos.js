@@ -103,7 +103,7 @@ function makeFileList(method_paths) {
 }
 
 function setAudio() {
-    document.getElementById("page").textContent = "" + (n + 1) + "/" + scores.length/2;
+    document.getElementById("page").textContent = "" + (n + 1) + "/" + (scores.length+1)/2;
 
     document.getElementById("audio1").innerHTML = 'Voice:<br>'
         + '<audio src="' + file_list[n*2]
@@ -135,7 +135,7 @@ function evalCheck() {
 }
 
 function setButton() {
-    if (n == (scores.length/2 - 1)) {
+    if (n == ((scores.length+1)/2 - 1)) {
         document.getElementById("prev").disabled = false;
         document.getElementById("next2").disabled = true;
         document.getElementById("finish").disabled = true;
