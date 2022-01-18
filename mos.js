@@ -103,14 +103,14 @@ function makeFileList(method_paths) {
 }
 
 function setAudio() {
-    document.getElementById("page").textContent = "" + (n + 1) + "/" + scores.length;
+    document.getElementById("page").textContent = "" + (n + 1) + "/" + scores.length/2;
 
     document.getElementById("audio1").innerHTML = 'Voice:<br>'
-        + '<audio src="' + file_list[n*2+1]
+        + '<audio src="' + file_list[n*2]
         + '" controls preload="auto">'
         + '</audio>';
     document.getElementById("audio2").innerHTML = 'Voice:<br>'
-        + '<audio src="' + file_list[n*2+2]
+        + '<audio src="' + file_list[n*2+1]
         + '" controls preload="auto">'
         + '</audio>';
 }
@@ -123,7 +123,7 @@ function init() {
 }
 
 function evalCheck() {
-    const c = scores[n];
+    const c = scores[n*2];
     if ((c <= 0) || (c > eval.length)) {
         for (var i = 0; i < eval.length; i++) {
             eval[i].checked = false;
@@ -135,7 +135,7 @@ function evalCheck() {
 }
 
 function setButton() {
-    if (n == (scores.length - 1)) {
+    if (n == (scores.length/2 - 1)) {
         document.getElementById("prev").disabled = false;
         document.getElementById("next2").disabled = true;
         document.getElementById("finish").disabled = true;
@@ -167,7 +167,7 @@ function setButton() {
 function evaluation() {
     for (var i = 0; i < eval.length; i++) {
         if (eval[i].checked) {
-            scores[n] = i;
+            scores[n*2] = i;
         }
     }
     setButton();
