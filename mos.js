@@ -106,11 +106,11 @@ function setAudio() {
     document.getElementById("page").textContent = "" + (n + 1) + "/" + scores.length;
 
     document.getElementById("audio1").innerHTML = 'Voice:<br>'
-        + '<audio src="' + file_list[(n-1)*2+1]
+        + '<audio src="' + file_list[n*2+1]
         + '" controls preload="auto">'
         + '</audio>';
     document.getElementById("audio2").innerHTML = 'Voice:<br>'
-        + '<audio src="' + file_list[(n-1)*2+2]
+        + '<audio src="' + file_list[n*2+2]
         + '" controls preload="auto">'
         + '</audio>';
 }
