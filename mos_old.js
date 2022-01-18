@@ -106,10 +106,7 @@ function setAudio() {
     document.getElementById("page").textContent = "" + (n + 1) + "/" + scores.length;
 
     document.getElementById("audio").innerHTML = 'Voice:<br>'
-        + '<audio src="' + file_list[(n-1)*2+1]
-        + '" controls preload="auto">'
-        + '</audio>';
-        + '<audio src="' + file_list[(n-1)*2+2]
+        + '<audio src="' + file_list[n]
         + '" controls preload="auto">'
         + '</audio>';
 }
@@ -174,8 +171,8 @@ function evaluation() {
 
 function exportCSV() {
     var csvData = "";
-    for (var i = 0; i < (file_list.length/2); i++) {
-        csvData += "" + file_list[i*2] + ","
+    for (var i = 0; i < file_list.length; i++) {
+        csvData += "" + file_list[i] + ","
             + scores[i] + "\r\n";
     }
 
