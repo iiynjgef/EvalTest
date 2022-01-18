@@ -98,7 +98,7 @@ function makeFileList(method_paths) {
         tmp = loadText(method_paths[i]);
         files = files.concat(tmp);
     }
-    files.shuffle();
+    // files.shuffle();
     return files;
 }
 
