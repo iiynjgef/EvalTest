@@ -105,10 +105,11 @@ function makeFileList(method_paths) {
 function setAudio() {
     document.getElementById("page").textContent = "" + (n + 1) + "/" + scores.length;
 
-    document.getElementById("audio").innerHTML = 'Voice:<br>'
+    document.getElementById("audio1").innerHTML = 'Voice:<br>'
         + '<audio src="' + file_list[(n-1)*2+1]
         + '" controls preload="auto">'
         + '</audio>';
+    document.getElementById("audio2").innerHTML = 'Voice:<br>'
         + '<audio src="' + file_list[(n-1)*2+2]
         + '" controls preload="auto">'
         + '</audio>';
@@ -166,7 +167,7 @@ function setButton() {
 function evaluation() {
     for (var i = 0; i < eval.length; i++) {
         if (eval[i].checked) {
-            scores[n] = 5 - i;
+            scores[n] = i;
         }
     }
     setButton();
@@ -175,7 +176,7 @@ function evaluation() {
 function exportCSV() {
     var csvData = "";
     for (var i = 0; i < (file_list.length/2); i++) {
-        csvData += "" + file_list[i*2] + ","
+        csvData += "" + "0:" + file_list[i*2] + "1:" + file_list[i*2+1] + ","
             + scores[i] + "\r\n";
     }
 
